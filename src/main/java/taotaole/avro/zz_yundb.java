@@ -7,7 +7,7 @@ package taotaole.avro;
 @SuppressWarnings("all")
 @org.apache.avro.specific.AvroGenerated
 public class zz_yundb extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"zz_yundb\",\"namespace\":\"taotaole.avro\",\"fields\":[{\"name\":\"id\",\"type\":\"int\"},{\"name\":\"order_id\",\"type\":\"int\"},{\"name\":\"mid\",\"type\":\"int\"},{\"name\":\"username\",\"type\":\"string\"},{\"name\":\"buy_id\",\"type\":\"int\"},{\"name\":\"goods_name\",\"type\":\"string\"},{\"name\":\"goods_price\",\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":8,\"scale\":2},{\"name\":\"price\",\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":8,\"scale\":2},{\"name\":\"qty\",\"type\":\"int\"},{\"name\":\"total\",\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":8,\"scale\":2},{\"name\":\"cover\",\"type\":\"int\"},{\"name\":\"qishu\",\"type\":\"int\"},{\"name\":\"yun_code\",\"type\":\"string\"},{\"name\":\"luck_code\",\"type\":\"string\"},{\"name\":\"db_time\",\"type\":\"string\"},{\"name\":\"timenum\",\"type\":\"string\"},{\"name\":\"status\",\"type\":\"int\"},{\"name\":\"ip\",\"type\":\"string\"},{\"name\":\"is_show\",\"type\":\"int\"},{\"name\":\"is_award\",\"type\":\"int\"},{\"name\":\"add_time\",\"type\":\"int\"},{\"name\":\"type\",\"type\":\"int\"},{\"name\":\"sharecode\",\"type\":\"string\"},{\"name\":\"fdis\",\"type\":\"int\"},{\"name\":\"agents\",\"type\":\"string\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"zz_yundb\",\"namespace\":\"taotaole.avro\",\"fields\":[{\"name\":\"id\",\"type\":\"int\"},{\"name\":\"order_id\",\"type\":\"int\"},{\"name\":\"mid\",\"type\":\"int\"},{\"name\":\"username\",\"type\":\"string\"},{\"name\":\"buy_id\",\"type\":\"int\"},{\"name\":\"goods_name\",\"type\":\"string\"},{\"name\":\"goods_price\",\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":10,\"scale\":0},{\"name\":\"price\",\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":10,\"scale\":0},{\"name\":\"qty\",\"type\":\"int\"},{\"name\":\"total\",\"type\":\"bytes\",\"logicalType\":\"decimal\",\"precision\":10,\"scale\":0},{\"name\":\"cover\",\"type\":\"int\"},{\"name\":\"qishu\",\"type\":\"int\"},{\"name\":\"yun_code\",\"type\":{\"type\":\"map\",\"values\":\"string\"}},{\"name\":\"luck_code\",\"type\":[\"null\",\"string\",{\"type\":\"map\",\"values\":\"string\"}]},{\"name\":\"db_time\",\"type\":\"string\"},{\"name\":\"timenum\",\"type\":{\"type\":\"map\",\"values\":\"string\"}},{\"name\":\"status\",\"type\":\"int\"},{\"name\":\"ip\",\"type\":\"string\"},{\"name\":\"is_show\",\"type\":\"int\"},{\"name\":\"is_award\",\"type\":\"int\"},{\"name\":\"add_time\",\"type\":\"int\"},{\"name\":\"type\",\"type\":{\"type\":\"map\",\"values\":\"int\"}},{\"name\":\"sharecode\",\"type\":\"string\"},{\"name\":\"fdis\",\"type\":{\"type\":\"map\",\"values\":\"int\"}},{\"name\":\"agents\",\"type\":{\"type\":\"map\",\"values\":\"string\"}}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
   @Deprecated public int id;
   @Deprecated public int order_id;
@@ -21,19 +21,19 @@ public class zz_yundb extends org.apache.avro.specific.SpecificRecordBase implem
   @Deprecated public java.nio.ByteBuffer total;
   @Deprecated public int cover;
   @Deprecated public int qishu;
-  @Deprecated public java.lang.CharSequence yun_code;
-  @Deprecated public java.lang.CharSequence luck_code;
+  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.CharSequence> yun_code;
+  @Deprecated public java.lang.Object luck_code;
   @Deprecated public java.lang.CharSequence db_time;
-  @Deprecated public java.lang.CharSequence timenum;
+  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.CharSequence> timenum;
   @Deprecated public int status;
   @Deprecated public java.lang.CharSequence ip;
   @Deprecated public int is_show;
   @Deprecated public int is_award;
   @Deprecated public int add_time;
-  @Deprecated public int type;
+  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Integer> type;
   @Deprecated public java.lang.CharSequence sharecode;
-  @Deprecated public int fdis;
-  @Deprecated public java.lang.CharSequence agents;
+  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.Integer> fdis;
+  @Deprecated public java.util.Map<java.lang.CharSequence,java.lang.CharSequence> agents;
 
   /**
    * Default constructor.  Note that this does not initialize fields
@@ -45,7 +45,7 @@ public class zz_yundb extends org.apache.avro.specific.SpecificRecordBase implem
   /**
    * All-args constructor.
    */
-  public zz_yundb(java.lang.Integer id, java.lang.Integer order_id, java.lang.Integer mid, java.lang.CharSequence username, java.lang.Integer buy_id, java.lang.CharSequence goods_name, java.nio.ByteBuffer goods_price, java.nio.ByteBuffer price, java.lang.Integer qty, java.nio.ByteBuffer total, java.lang.Integer cover, java.lang.Integer qishu, java.lang.CharSequence yun_code, java.lang.CharSequence luck_code, java.lang.CharSequence db_time, java.lang.CharSequence timenum, java.lang.Integer status, java.lang.CharSequence ip, java.lang.Integer is_show, java.lang.Integer is_award, java.lang.Integer add_time, java.lang.Integer type, java.lang.CharSequence sharecode, java.lang.Integer fdis, java.lang.CharSequence agents) {
+  public zz_yundb(java.lang.Integer id, java.lang.Integer order_id, java.lang.Integer mid, java.lang.CharSequence username, java.lang.Integer buy_id, java.lang.CharSequence goods_name, java.nio.ByteBuffer goods_price, java.nio.ByteBuffer price, java.lang.Integer qty, java.nio.ByteBuffer total, java.lang.Integer cover, java.lang.Integer qishu, java.util.Map<java.lang.CharSequence,java.lang.CharSequence> yun_code, java.lang.Object luck_code, java.lang.CharSequence db_time, java.util.Map<java.lang.CharSequence,java.lang.CharSequence> timenum, java.lang.Integer status, java.lang.CharSequence ip, java.lang.Integer is_show, java.lang.Integer is_award, java.lang.Integer add_time, java.util.Map<java.lang.CharSequence,java.lang.Integer> type, java.lang.CharSequence sharecode, java.util.Map<java.lang.CharSequence,java.lang.Integer> fdis, java.util.Map<java.lang.CharSequence,java.lang.CharSequence> agents) {
     this.id = id;
     this.order_id = order_id;
     this.mid = mid;
@@ -121,19 +121,19 @@ public class zz_yundb extends org.apache.avro.specific.SpecificRecordBase implem
     case 9: total = (java.nio.ByteBuffer)value$; break;
     case 10: cover = (java.lang.Integer)value$; break;
     case 11: qishu = (java.lang.Integer)value$; break;
-    case 12: yun_code = (java.lang.CharSequence)value$; break;
-    case 13: luck_code = (java.lang.CharSequence)value$; break;
+    case 12: yun_code = (java.util.Map<java.lang.CharSequence,java.lang.CharSequence>)value$; break;
+    case 13: luck_code = (java.lang.Object)value$; break;
     case 14: db_time = (java.lang.CharSequence)value$; break;
-    case 15: timenum = (java.lang.CharSequence)value$; break;
+    case 15: timenum = (java.util.Map<java.lang.CharSequence,java.lang.CharSequence>)value$; break;
     case 16: status = (java.lang.Integer)value$; break;
     case 17: ip = (java.lang.CharSequence)value$; break;
     case 18: is_show = (java.lang.Integer)value$; break;
     case 19: is_award = (java.lang.Integer)value$; break;
     case 20: add_time = (java.lang.Integer)value$; break;
-    case 21: type = (java.lang.Integer)value$; break;
+    case 21: type = (java.util.Map<java.lang.CharSequence,java.lang.Integer>)value$; break;
     case 22: sharecode = (java.lang.CharSequence)value$; break;
-    case 23: fdis = (java.lang.Integer)value$; break;
-    case 24: agents = (java.lang.CharSequence)value$; break;
+    case 23: fdis = (java.util.Map<java.lang.CharSequence,java.lang.Integer>)value$; break;
+    case 24: agents = (java.util.Map<java.lang.CharSequence,java.lang.CharSequence>)value$; break;
     default: throw new org.apache.avro.AvroRuntimeException("Bad index");
     }
   }
@@ -321,7 +321,7 @@ public class zz_yundb extends org.apache.avro.specific.SpecificRecordBase implem
   /**
    * Gets the value of the 'yun_code' field.
    */
-  public java.lang.CharSequence getYunCode() {
+  public java.util.Map<java.lang.CharSequence,java.lang.CharSequence> getYunCode() {
     return yun_code;
   }
 
@@ -329,14 +329,14 @@ public class zz_yundb extends org.apache.avro.specific.SpecificRecordBase implem
    * Sets the value of the 'yun_code' field.
    * @param value the value to set.
    */
-  public void setYunCode(java.lang.CharSequence value) {
+  public void setYunCode(java.util.Map<java.lang.CharSequence,java.lang.CharSequence> value) {
     this.yun_code = value;
   }
 
   /**
    * Gets the value of the 'luck_code' field.
    */
-  public java.lang.CharSequence getLuckCode() {
+  public java.lang.Object getLuckCode() {
     return luck_code;
   }
 
@@ -344,7 +344,7 @@ public class zz_yundb extends org.apache.avro.specific.SpecificRecordBase implem
    * Sets the value of the 'luck_code' field.
    * @param value the value to set.
    */
-  public void setLuckCode(java.lang.CharSequence value) {
+  public void setLuckCode(java.lang.Object value) {
     this.luck_code = value;
   }
 
@@ -366,7 +366,7 @@ public class zz_yundb extends org.apache.avro.specific.SpecificRecordBase implem
   /**
    * Gets the value of the 'timenum' field.
    */
-  public java.lang.CharSequence getTimenum() {
+  public java.util.Map<java.lang.CharSequence,java.lang.CharSequence> getTimenum() {
     return timenum;
   }
 
@@ -374,7 +374,7 @@ public class zz_yundb extends org.apache.avro.specific.SpecificRecordBase implem
    * Sets the value of the 'timenum' field.
    * @param value the value to set.
    */
-  public void setTimenum(java.lang.CharSequence value) {
+  public void setTimenum(java.util.Map<java.lang.CharSequence,java.lang.CharSequence> value) {
     this.timenum = value;
   }
 
@@ -456,7 +456,7 @@ public class zz_yundb extends org.apache.avro.specific.SpecificRecordBase implem
   /**
    * Gets the value of the 'type' field.
    */
-  public java.lang.Integer getType() {
+  public java.util.Map<java.lang.CharSequence,java.lang.Integer> getType() {
     return type;
   }
 
@@ -464,7 +464,7 @@ public class zz_yundb extends org.apache.avro.specific.SpecificRecordBase implem
    * Sets the value of the 'type' field.
    * @param value the value to set.
    */
-  public void setType(java.lang.Integer value) {
+  public void setType(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
     this.type = value;
   }
 
@@ -486,7 +486,7 @@ public class zz_yundb extends org.apache.avro.specific.SpecificRecordBase implem
   /**
    * Gets the value of the 'fdis' field.
    */
-  public java.lang.Integer getFdis() {
+  public java.util.Map<java.lang.CharSequence,java.lang.Integer> getFdis() {
     return fdis;
   }
 
@@ -494,14 +494,14 @@ public class zz_yundb extends org.apache.avro.specific.SpecificRecordBase implem
    * Sets the value of the 'fdis' field.
    * @param value the value to set.
    */
-  public void setFdis(java.lang.Integer value) {
+  public void setFdis(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
     this.fdis = value;
   }
 
   /**
    * Gets the value of the 'agents' field.
    */
-  public java.lang.CharSequence getAgents() {
+  public java.util.Map<java.lang.CharSequence,java.lang.CharSequence> getAgents() {
     return agents;
   }
 
@@ -509,7 +509,7 @@ public class zz_yundb extends org.apache.avro.specific.SpecificRecordBase implem
    * Sets the value of the 'agents' field.
    * @param value the value to set.
    */
-  public void setAgents(java.lang.CharSequence value) {
+  public void setAgents(java.util.Map<java.lang.CharSequence,java.lang.CharSequence> value) {
     this.agents = value;
   }
 
@@ -546,19 +546,19 @@ public class zz_yundb extends org.apache.avro.specific.SpecificRecordBase implem
     private java.nio.ByteBuffer total;
     private int cover;
     private int qishu;
-    private java.lang.CharSequence yun_code;
-    private java.lang.CharSequence luck_code;
+    private java.util.Map<java.lang.CharSequence,java.lang.CharSequence> yun_code;
+    private java.lang.Object luck_code;
     private java.lang.CharSequence db_time;
-    private java.lang.CharSequence timenum;
+    private java.util.Map<java.lang.CharSequence,java.lang.CharSequence> timenum;
     private int status;
     private java.lang.CharSequence ip;
     private int is_show;
     private int is_award;
     private int add_time;
-    private int type;
+    private java.util.Map<java.lang.CharSequence,java.lang.Integer> type;
     private java.lang.CharSequence sharecode;
-    private int fdis;
-    private java.lang.CharSequence agents;
+    private java.util.Map<java.lang.CharSequence,java.lang.Integer> fdis;
+    private java.util.Map<java.lang.CharSequence,java.lang.CharSequence> agents;
 
     /** Creates a new Builder */
     private Builder() {
@@ -1069,12 +1069,12 @@ public class zz_yundb extends org.apache.avro.specific.SpecificRecordBase implem
     }
 
     /** Gets the value of the 'yun_code' field */
-    public java.lang.CharSequence getYunCode() {
+    public java.util.Map<java.lang.CharSequence,java.lang.CharSequence> getYunCode() {
       return yun_code;
     }
     
     /** Sets the value of the 'yun_code' field */
-    public taotaole.avro.zz_yundb.Builder setYunCode(java.lang.CharSequence value) {
+    public taotaole.avro.zz_yundb.Builder setYunCode(java.util.Map<java.lang.CharSequence,java.lang.CharSequence> value) {
       validate(fields()[12], value);
       this.yun_code = value;
       fieldSetFlags()[12] = true;
@@ -1094,12 +1094,12 @@ public class zz_yundb extends org.apache.avro.specific.SpecificRecordBase implem
     }
 
     /** Gets the value of the 'luck_code' field */
-    public java.lang.CharSequence getLuckCode() {
+    public java.lang.Object getLuckCode() {
       return luck_code;
     }
     
     /** Sets the value of the 'luck_code' field */
-    public taotaole.avro.zz_yundb.Builder setLuckCode(java.lang.CharSequence value) {
+    public taotaole.avro.zz_yundb.Builder setLuckCode(java.lang.Object value) {
       validate(fields()[13], value);
       this.luck_code = value;
       fieldSetFlags()[13] = true;
@@ -1144,12 +1144,12 @@ public class zz_yundb extends org.apache.avro.specific.SpecificRecordBase implem
     }
 
     /** Gets the value of the 'timenum' field */
-    public java.lang.CharSequence getTimenum() {
+    public java.util.Map<java.lang.CharSequence,java.lang.CharSequence> getTimenum() {
       return timenum;
     }
     
     /** Sets the value of the 'timenum' field */
-    public taotaole.avro.zz_yundb.Builder setTimenum(java.lang.CharSequence value) {
+    public taotaole.avro.zz_yundb.Builder setTimenum(java.util.Map<java.lang.CharSequence,java.lang.CharSequence> value) {
       validate(fields()[15], value);
       this.timenum = value;
       fieldSetFlags()[15] = true;
@@ -1290,12 +1290,12 @@ public class zz_yundb extends org.apache.avro.specific.SpecificRecordBase implem
     }
 
     /** Gets the value of the 'type' field */
-    public java.lang.Integer getType() {
+    public java.util.Map<java.lang.CharSequence,java.lang.Integer> getType() {
       return type;
     }
     
     /** Sets the value of the 'type' field */
-    public taotaole.avro.zz_yundb.Builder setType(int value) {
+    public taotaole.avro.zz_yundb.Builder setType(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
       validate(fields()[21], value);
       this.type = value;
       fieldSetFlags()[21] = true;
@@ -1309,6 +1309,7 @@ public class zz_yundb extends org.apache.avro.specific.SpecificRecordBase implem
     
     /** Clears the value of the 'type' field */
     public taotaole.avro.zz_yundb.Builder clearType() {
+      type = null;
       fieldSetFlags()[21] = false;
       return this;
     }
@@ -1339,12 +1340,12 @@ public class zz_yundb extends org.apache.avro.specific.SpecificRecordBase implem
     }
 
     /** Gets the value of the 'fdis' field */
-    public java.lang.Integer getFdis() {
+    public java.util.Map<java.lang.CharSequence,java.lang.Integer> getFdis() {
       return fdis;
     }
     
     /** Sets the value of the 'fdis' field */
-    public taotaole.avro.zz_yundb.Builder setFdis(int value) {
+    public taotaole.avro.zz_yundb.Builder setFdis(java.util.Map<java.lang.CharSequence,java.lang.Integer> value) {
       validate(fields()[23], value);
       this.fdis = value;
       fieldSetFlags()[23] = true;
@@ -1358,17 +1359,18 @@ public class zz_yundb extends org.apache.avro.specific.SpecificRecordBase implem
     
     /** Clears the value of the 'fdis' field */
     public taotaole.avro.zz_yundb.Builder clearFdis() {
+      fdis = null;
       fieldSetFlags()[23] = false;
       return this;
     }
 
     /** Gets the value of the 'agents' field */
-    public java.lang.CharSequence getAgents() {
+    public java.util.Map<java.lang.CharSequence,java.lang.CharSequence> getAgents() {
       return agents;
     }
     
     /** Sets the value of the 'agents' field */
-    public taotaole.avro.zz_yundb.Builder setAgents(java.lang.CharSequence value) {
+    public taotaole.avro.zz_yundb.Builder setAgents(java.util.Map<java.lang.CharSequence,java.lang.CharSequence> value) {
       validate(fields()[24], value);
       this.agents = value;
       fieldSetFlags()[24] = true;
@@ -1403,19 +1405,19 @@ public class zz_yundb extends org.apache.avro.specific.SpecificRecordBase implem
         record.total = fieldSetFlags()[9] ? this.total : (java.nio.ByteBuffer) defaultValue(fields()[9]);
         record.cover = fieldSetFlags()[10] ? this.cover : (java.lang.Integer) defaultValue(fields()[10]);
         record.qishu = fieldSetFlags()[11] ? this.qishu : (java.lang.Integer) defaultValue(fields()[11]);
-        record.yun_code = fieldSetFlags()[12] ? this.yun_code : (java.lang.CharSequence) defaultValue(fields()[12]);
-        record.luck_code = fieldSetFlags()[13] ? this.luck_code : (java.lang.CharSequence) defaultValue(fields()[13]);
+        record.yun_code = fieldSetFlags()[12] ? this.yun_code : (java.util.Map<java.lang.CharSequence,java.lang.CharSequence>) defaultValue(fields()[12]);
+        record.luck_code = fieldSetFlags()[13] ? this.luck_code : (java.lang.Object) defaultValue(fields()[13]);
         record.db_time = fieldSetFlags()[14] ? this.db_time : (java.lang.CharSequence) defaultValue(fields()[14]);
-        record.timenum = fieldSetFlags()[15] ? this.timenum : (java.lang.CharSequence) defaultValue(fields()[15]);
+        record.timenum = fieldSetFlags()[15] ? this.timenum : (java.util.Map<java.lang.CharSequence,java.lang.CharSequence>) defaultValue(fields()[15]);
         record.status = fieldSetFlags()[16] ? this.status : (java.lang.Integer) defaultValue(fields()[16]);
         record.ip = fieldSetFlags()[17] ? this.ip : (java.lang.CharSequence) defaultValue(fields()[17]);
         record.is_show = fieldSetFlags()[18] ? this.is_show : (java.lang.Integer) defaultValue(fields()[18]);
         record.is_award = fieldSetFlags()[19] ? this.is_award : (java.lang.Integer) defaultValue(fields()[19]);
         record.add_time = fieldSetFlags()[20] ? this.add_time : (java.lang.Integer) defaultValue(fields()[20]);
-        record.type = fieldSetFlags()[21] ? this.type : (java.lang.Integer) defaultValue(fields()[21]);
+        record.type = fieldSetFlags()[21] ? this.type : (java.util.Map<java.lang.CharSequence,java.lang.Integer>) defaultValue(fields()[21]);
         record.sharecode = fieldSetFlags()[22] ? this.sharecode : (java.lang.CharSequence) defaultValue(fields()[22]);
-        record.fdis = fieldSetFlags()[23] ? this.fdis : (java.lang.Integer) defaultValue(fields()[23]);
-        record.agents = fieldSetFlags()[24] ? this.agents : (java.lang.CharSequence) defaultValue(fields()[24]);
+        record.fdis = fieldSetFlags()[23] ? this.fdis : (java.util.Map<java.lang.CharSequence,java.lang.Integer>) defaultValue(fields()[23]);
+        record.agents = fieldSetFlags()[24] ? this.agents : (java.util.Map<java.lang.CharSequence,java.lang.CharSequence>) defaultValue(fields()[24]);
         return record;
       } catch (Exception e) {
         throw new org.apache.avro.AvroRuntimeException(e);

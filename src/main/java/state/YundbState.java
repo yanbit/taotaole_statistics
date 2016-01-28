@@ -3,7 +3,7 @@ package state;
 import backtype.storm.Config;
 import backtype.storm.LocalCluster;
 import backtype.storm.tuple.Fields;
-import function.YundbFunction;
+import function.YundbFunction2;
 import org.apache.storm.jdbc.trident.state.JdbcUpdater;
 import storm.trident.TridentTopology;
 import util.Constants;
@@ -20,7 +20,7 @@ public class YundbState {
         TridentTopology topology = new TridentTopology();
         // proccess log
         topology.newStream("spout", KafkaUtils.getTopic("test-taotaole-jdbc-zz_yundb"))
-                .each(new Fields("str"), new YundbFunction(), new Fields(
+                .each(new Fields("str"), new YundbFunction2(), new Fields(
                         "id",
                         "order_id",
                         "mid",

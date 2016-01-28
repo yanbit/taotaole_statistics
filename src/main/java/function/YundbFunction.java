@@ -1,11 +1,13 @@
 package function;
 
-import backtype.storm.tuple.Values;
-import com.google.common.collect.Iterators;
+import backtype.storm.tuple.TupleImpl;
+import kafka.message.Message;
 import org.apache.avro.Schema;
 import org.apache.avro.generic.GenericDatumReader;
+import org.apache.avro.generic.GenericRecord;
+import org.apache.avro.io.DatumReader;
+import org.apache.avro.io.Decoder;
 import org.apache.avro.io.DecoderFactory;
-import org.apache.avro.io.JsonDecoder;
 import org.apache.avro.specific.SpecificDatumReader;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -17,8 +19,7 @@ import taotaole.avro.zz_yundb;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.math.BigInteger;
+import java.nio.ByteBuffer;
 import java.util.Map;
 
 /**
@@ -46,20 +47,28 @@ public class YundbFunction extends BaseFunction {
     int count = 0;
     @Override
     public void execute(TridentTuple tuple, TridentCollector collector) {
-        JsonDecoder decoder = null;
+        //JsonDecoder decoder = null;
+//        BinaryDecoder decoder = null;
+        Message message = new Message((byte[])((TupleImpl) tuple).get("bytes"));
+        ByteBuffer bb = message.payload();
+        byte[] b = new byte[bb.remaining()];
+        bb.get(b, 0, b.length);
+
+        System.out.println(tuple);
         try {
-            System.out.println(new String(tuple.getByteByField("str"),"utf-8"));
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        try {
-            decoder = DecoderFactory.get().jsonDecoder(schema, tuple.getString(0));
-            zz_yundb yundb = din.read(null, decoder);
-            collector.emit(new Values(yundb.getId(),yundb.getOrderId(),yundb.getMid(),yundb.getUsername(),yundb.getBuyId(),yundb.getGoodsName(),
-                    new BigInteger(yundb.getGoodsPrice().array()),new BigInteger(yundb.getPrice().array()),yundb.getQty(),new BigInteger(yundb.getTotal().array()),
-                    yundb.getIp(),yundb.getIsShow(),yundb.getIsAward(),yundb.getAddTime(), Iterators.getLast(yundb.getType().values().iterator()),yundb.getSharecode(),
-                    yundb.getIp(),yundb.getIsShow(),yundb.getIsAward(),yundb.getAddTime(),Iterators.getLast(yundb.getType().values().iterator()),yundb.getSharecode(),
-                    Iterators.getLast(yundb.getFdis().values().iterator()), Iterators.getLast(yundb.getAgents().values().iterator())));
+            DatumReader<GenericRecord> reader = new GenericDatumReader<GenericRecord>(schema);
+            Decoder decoder = DecoderFactory.get().binaryDecoder(b, null);
+            GenericRecord result = reader.read(null, decoder);
+            System.out.println("siteId: "+ result.get("id"));
+            System.out.println("eventType: "+ result.get("eventType"));
+            //decoder = DecoderFactory.get().jsonDecoder(schema, tuple.getString(0));
+//            decoder = DecoderFactory.get().binaryDecoder(tuple.getString(0).getBytes(),null);
+//            zz_yundb yundb = din.read(null, decoder);
+//            collector.emit(new Values(yundb.getId(),yundb.getOrderId(),yundb.getMid(),yundb.getUsername(),yundb.getBuyId(),yundb.getGoodsName(),
+//                    new BigInteger(yundb.getGoodsPrice().array()),new BigInteger(yundb.getPrice().array()),yundb.getQty(),new BigInteger(yundb.getTotal().array()),
+//                    yundb.getIp(),yundb.getIsShow(),yundb.getIsAward(),yundb.getAddTime(), Iterators.getLast(yundb.getType().values().iterator()),yundb.getSharecode(),
+//                    yundb.getIp(),yundb.getIsShow(),yundb.getIsAward(),yundb.getAddTime(),Iterators.getLast(yundb.getType().values().iterator()),yundb.getSharecode(),
+//                    Iterators.getLast(yundb.getFdis().values().iterator()), Iterators.getLast(yundb.getAgents().values().iterator())));
         } catch (IOException e) {
             count++;
             e.printStackTrace();

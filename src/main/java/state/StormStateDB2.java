@@ -21,7 +21,7 @@ public class StormStateDB2 {
         // proccess log
         topology.newStream("spout", KafkaUtils.getTopic("test"))
                 .each(new Fields("str"), new GoodsFunction(), new Fields("id", "user_name", "create_date"))
-                .partitionPersist(KafkaUtils.getStateFactory("test_goods"), new Fields("id", "user_name", "create_date"), new JdbcUpdater(), new Fields());
+                .partitionPersist(KafkaUtils.getSyncTableStateFactory("test_goods"), new Fields("id", "user_name", "create_date"), new JdbcUpdater(), new Fields());
 
         // submit job
         Config config = new Config();

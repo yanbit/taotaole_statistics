@@ -31,7 +31,7 @@ public class KafkaUtils {
         return tridentKafkaSpout;
     }
 
-    public static JdbcStateFactory getStateFactory(String tableName){
+    public static JdbcStateFactory getSyncTableStateFactory(String tableName){
         ConnectionProvider connectionProvider = new HikariCPConnectionProvider(Constants.getDBInfo());
         JdbcMapper jdbcMapper = new SimpleJdbcMapper(tableName, connectionProvider);
         JdbcState.Options options = new JdbcState.Options()
